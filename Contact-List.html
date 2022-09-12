@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="Style.css">
+    <title>Contact List</title>
+</head>
+<body class="bg-secondary">
+    <div class="container">
+        <h1 class="text-center mt-4 pt-4 pb-4 bg-info">My Contacts</h1>
+        <input type="text" id="filterInput" placeholder="Search Name ------" class="form-control mb-3 mt-3">
+        <ul id="names" class="list-group">
+            <li class="list-group"> <h5>A</h5></li>
+            <li class="list-group-item"> <a href="#"> Hairs</a> </li>
+            <li class="list-group-item"><a href="#">Abid</a></li>
+            <li class="list-group-item"><a href="#">Jameel</a></li>
+            <li class="list-group-item"><a href="#">Obaid</a></li>
+            <li class="list-group-item"><a href="#">Abid</a></li>
+            <li class="list-group-item"><a href="#">Shameer</a></li>
+            <li class="list-group-item"><a href="#">Saleem</a></li>
+
+            <li class="list-group"> <h5>B</h5></li>
+            <li class="list-group-item"> <a href="#"> yahya</a> </li>
+            <li class="list-group-item"><a href="#">Jalal</a></li>
+            <li class="list-group-item"><a href="#">Jameel</a></li>
+            <li class="list-group-item"><a href="#">Maaz</a></li>
+            <li class="list-group-item"><a href="#">Shah</a></li>
+            <li class="list-group-item"><a href="#">Amir</a></li>
+            <li class="list-group-item"><a href="#">Shadab</a></li>
+
+            <li class="list-group"> <h5>C</h5></li>
+            <li class="list-group-item"> <a href="#"> Bakir</a> </li>
+            <li class="list-group-item"><a href="#">Ibrahim</a></li>
+            <li class="list-group-item"><a href="#">yaman</a></li>
+            <li class="list-group-item"><a href="#">omar</a></li>
+            <li class="list-group-item"><a href="#">Akmal</a></li>
+            <li class="list-group-item"><a href="#">Akram</a></li>
+            <li class="list-group-item"><a href="#">Saad</a></li>
+
+            <li class="list-group"> <h5>D</h5></li>
+            <li class="list-group-item"> <a href="#"> Salman</a> </li>
+            <li class="list-group-item"><a href="#">Imran</a></li>
+            <li class="list-group-item"><a href="#">Ameer</a></li>
+            <li class="list-group-item"><a href="#">Musa</a></li>
+            <li class="list-group-item"><a href="#">Zaid</a></li>
+            <li class="list-group-item"><a href="#">Mujtaba</a></li>
+            <li class="list-group-item"><a href="#">Mobeen</a></li>
+        </ul>
+    </div>
+
+    <script>
+        //  Get Input Element
+        let filterInput = document.getElementById('filterInput');
+        //  Add event Listener
+        filterInput.addEventListener('keyup', filterNames);
+        function filterNames() {
+            //console.log(1)
+
+            //  ================ Get Value of Input ====================
+            let filterValue = document.getElementById('filterInput').value.toUpperCase();
+            // console.log(filterValue);
+            //  ============ Get Name of Ul ======================
+            let ul = document.getElementById('names');
+            //============= Get Value of li from Ul ============
+            let li = ul.querySelectorAll('li.list-group-item');
+
+            // ============== Loop through the list-group-item ================
+            for(let i = 0;i < li.length;i++) {
+                let a = li[i].getElementsByTagName('a')[0];
+                //   if matched 
+                if(a.innerHTML.toUpperCase().indexOf(filterValue) > -1 ) {
+                    li[i].style.display = '';
+                } else {
+                    li[i].style.display = 'none';
+                }
+            }
+        }
+    </script>
+</body>
+</html>

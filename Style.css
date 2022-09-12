@@ -1,0 +1,8 @@
+.container h1, h5{
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+.container ul li a{
+    list-style: none;
+    text-decoration: none;
+}
